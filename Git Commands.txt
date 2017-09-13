@@ -1,0 +1,93 @@
+USING PROXY:
+git config --global http.proxy https://172.16.200.1:3128
+git config --global http.proxy http://172.16.200.1:3128
+
+
+
+git push --all -u (Pushing all branched to remote)
+
+git push -u origin feature_branch_name (Pushing normal branch to remote)
+
+git push origin --delete <branchName> (Deleting remote branch)
+
+git branch -d <branch_name> (Deleting local branch)
+
+git checkout -b [name_of_your_new_branch] (Create the branch on your local machine and switch in this branch)
+
+git push origin [name_of_your_new_branch] (Push the branch on github )
+
+git branch -m <newname> (Renaming a branch)
+
+
+
+
+
+	* git init - Initialize a git repo
+        * git config (modifier)
+          1. git config --global (for current user)
+          2. git congif --system (for all user)
+          3. git config (project to project)
+        * git config --global use.name/user.email -checking user name/email
+        * git config --global user.name/user.email "name/email" - to add name/email  
+        * git add file_name.txt- add changes made in the file and to add it to staging area form directory
+	* git add . - Add all change in The Directory
+	* git commit -m "Message" - commit(save) all files from staging area to repo with a message
+        * git commit -am "msg" - add and commit. (Caveat - Does not work with renaming)
+	* git log - List of all commits. (also can be sorted out by time)
+	* git status - Changes to be committed. (The changes that were made)
+        * git rm filename - delete file from WD & SA directly. The file will not be found in recycle bin. (we can use this command after deleting the file from WD)
+        * git mv filename renamed_filename - To rename a file in WD & SA directly.                    
+	* git diff filename - show changes in the file(between working directory & repo).  It is needed to be check before add it to the staging area. (use git diff if all changes need to be shown.)
+	* git diff --staged filename - show changes in the file(between staging area & repo). (use git diff --staged if all changes need to be shown.)
+        * git reset HEAD filename - Unstage the file.(Suppose a file has been added by git add. So we want to change it. Now before commit i want it not to be changed. I want it to stay uncommitted. Thus I'll need to remove what was added. So this will be used to do that)
+	* git checkout (SHA optional) -- filename - If we need to revert the changes in WD (If added the git reset needs to be used. It will add the file from repo to WD)
+	* git commit --ament -m "msg" - Make EDITS to RECENT commit or the HEAD.
+	* git revert SHA - Automatic revert to the specified version
+	* git commit --amend -m "" -- Change the LAST/RECENT commit.
+	* git reset --hard SHA -- make the head pointer point to the sha we are wanting
+	* git checkout branch -- checkout the branch and make everything look like that that branch
+	* git checkout -- filename or directory name -- checkout the file in previous commit and make everything look like that
+	* git push -u (remote branch) (branch name we want to put) -- push the branch to remote repository
+	* git clone (repo location) (any name to directory) -- make a clone to the directory of the repository we specified
+	* git clone -b (branch name we want to clone) (remote r) -- make a clone of THAT branch
+	* git fetch [alias for example origin] -- tracks any changes made in remote branch. Without it the cloned project wont show any changes.
+	* git remote show [alias] -- shows if anything was added in remote branch
+	* git pull ----- git fetch + git merge
+
+        * mkdir directory_name - create new directory
+     cat .git/config -- see which branch tracking which
+
+
+	* git branch branch_name --- creates a new branch
+	* git checkout branch_name --- switches to the branch_name. Actually it makes the directory like branch_name
+	* git diff branch1..branch2 --- difference between branch1 and branch2
+	* git branch -d branch_name --- SAFELY DELETE the branch
+	* git branch -D branch_name --- UNSAFELY DELETE the branch
+	* git push [alias] [branch_name] --- push the branch in remote repository
+	* git branch branchname [alias]/branchname_of_remote_branch --- create a branch named branchname to track remote branch specified (Remember to git fetch first)
+	* git clean -f --- remove untracked files
+	* git clean -f -d --- remove untracked directories
+
+
+     
+
+	* git merge branchname --- merges the branch specified with the branch currently checked in. merging will merge all the changes and then all will be committed.
+
+	* git push origin --delete branch_name --- delete branch of remote repository
+
+
+     git push -f --- force merge with the remote repo( very unsafe)
+
+     Merging a remote branch---
+
+	1. Merge the branch locally,
+	2. then push the branch
+
+
+     git push -u [alias] [branchname] --- pushes the branch to remote branch (example git push -u origin branch)
+
+Problem : There are two branches. Fetch  a specific file from one branch then add that file to other branch.
+Solution:
+git checkout new_feature directory/file1
+
+then it will checkout THAT specific file to the branch I'm currently on.
