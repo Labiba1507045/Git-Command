@@ -1,27 +1,4 @@
-USING PROXY:
-git config --global http.proxy https://172.16.200.1:3128
-git config --global http.proxy http://172.16.200.1:3128
-
-
-
-git push --all -u (Pushing all branched to remote)
-
-git push -u origin feature_branch_name (Pushing normal branch to remote)
-
-git push origin --delete <branchName> (Deleting remote branch)
-
-git branch -d <branch_name> (Deleting local branch)
-
-git checkout -b [name_of_your_new_branch] (Create the branch on your local machine and switch in this branch)
-
-git push origin [name_of_your_new_branch] (Push the branch on github )
-
-git branch -m <newname> (Renaming a branch)
-
-
-
-
-
+GIT COMMAND:
 	* git init - Initialize a git repo
         * git config (modifier)
           1. git config --global (for current user)
@@ -85,9 +62,3 @@ git branch -m <newname> (Renaming a branch)
 
 
      git push -u [alias] [branchname] --- pushes the branch to remote branch (example git push -u origin branch)
-
-Problem : There are two branches. Fetch  a specific file from one branch then add that file to other branch.
-Solution:
-git checkout new_feature directory/file1
-
-then it will checkout THAT specific file to the branch I'm currently on.
